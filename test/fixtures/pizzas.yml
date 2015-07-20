@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  foto: MyString
+  ingredientes: MyText
+  precop: 1.5
+  precom: 1.5
+  precog: 1.5
+
+two:
+  nome: MyString
+  foto: MyString
+  ingredientes: MyText
+  precop: 1.5
+  precom: 1.5
+  precog: 1.5
