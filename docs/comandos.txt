@@ -3,3 +3,13 @@ rails g scaffold usuario email senha apelido tipo
 rails g scaffold pizza nome foto ingredientes:text precop:float precom:float precog:float
 rails g scaffold cliente nome email senha tel1 tel2
 rails g scaffold endereco cliente:references logradouro:text bairro cidade pontoreferencia
+Adicionar Bootstrap no projeto 
+1º adiciona no gemfile 
+gem 'bootstrap-sass'
+2º bundle install
+3º acrescentar no arquivo app/assets/javascripts/application.js:
+//= require bootstrap
+//= require bootstrap-sprockets
+4º criar o arquivo [ app/assets/stylesheets/bootstrap_and_overrides.css.scss. ] 
+5º Acrescentar dentro do arquivo criado anteriormente as seguintes linhas 
+@import "bootstrap";
