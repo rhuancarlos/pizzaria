@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150720203237) do
+ActiveRecord::Schema.define(version: 20150725195438) do
 
   create_table "clientes", force: :cascade do |t|
     t.string   "nome",       limit: 255
@@ -46,6 +46,29 @@ ActiveRecord::Schema.define(version: 20150720203237) do
     t.datetime "updated_at",                 null: false
   end
 
+  create_table "saleitems", force: :cascade do |t|
+    t.integer  "sale_id",    limit: 4
+    t.integer  "pizza_id",   limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "saleitems", ["pizza_id"], name: "index_saleitems_on_pizza_id", using: :btree
+  add_index "saleitems", ["sale_id"], name: "index_saleitems_on_sale_id", using: :btree
+
+  create_table "sales", force: :cascade do |t|
+    t.integer  "cliente_id",   limit: 4
+    t.string   "tiporetirada", limit: 255
+    t.text     "obsentrega",   limit: 65535
+    t.string   "status",       limit: 255
+    t.float    "valor",        limit: 24
+    t.string   "fpagamento",   limit: 255
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "sales", ["cliente_id"], name: "index_sales_on_cliente_id", using: :btree
+
   create_table "usuarios", force: :cascade do |t|
     t.string   "email",      limit: 255
     t.string   "senha",      limit: 255
@@ -56,4 +79,7 @@ ActiveRecord::Schema.define(version: 20150720203237) do
   end
 
   add_foreign_key "enderecos", "clientes"
+  add_foreign_key "saleitems", "pizzas"
+  add_foreign_key "saleitems", "sales"
+  add_foreign_key "sales", "clientes"
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :sales
   root 'home#index'
   resources :enderecos
   resources :clientes

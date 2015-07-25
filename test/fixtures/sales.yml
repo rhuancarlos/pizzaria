@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cliente_id: 
+  tiporetirada: MyString
+  obsentrega: MyText
+  status: MyString
+  valor: 1.5
+  fpagamento: MyString
+
+two:
+  cliente_id: 
+  tiporetirada: MyString
+  obsentrega: MyText
+  status: MyString
+  valor: 1.5
+  fpagamento: MyString

@@ -13,3 +13,6 @@ gem 'bootstrap-sass'
 4º criar o arquivo [ app/assets/stylesheets/bootstrap_and_overrides.css.scss. ] 
 5º Acrescentar dentro do arquivo criado anteriormente as seguintes linhas 
 @import "bootstrap";
+
+rails g scaffold sale cliente:references tiporetirada obsentrega:text status valor:float fpagamento
+rails g model saleitem sale:references pizza:references 
