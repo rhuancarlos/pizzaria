@@ -1,29 +1,46 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-2 temp-nav">
+    <%= render 'menu' %>
+</div>
+<div class="col-md-10 temp-conteudo">
+  <div class="row">
+    <% if @cliente.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @cliente.nome %>
-</p>
+        <ul>
+          <% @cliente.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+  <% if notice%>
+    <div class="alert alert-success" role="alert"><p id="notice"><%= notice %></p></div>
+  <% end %>
+  <h1>Cliente [ <%= @cliente.nome %> ] Salvo com Sucesso</h1>
+  <p>
+    <strong>Nome:</strong>
+    <%= @cliente.nome %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @cliente.email %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @cliente.email %>
+  </p>
 
-<p>
-  <strong>Senha:</strong>
-  <%= @cliente.senha %>
-</p>
+  <p>
+    <strong>Senha:</strong>
+    <%= @cliente.senha %>
+  </p>
 
-<p>
-  <strong>Tel1:</strong>
-  <%= @cliente.tel1 %>
-</p>
+  <p>
+    <strong>Tel1:</strong>
+    <%= @cliente.tel1 %>
+  </p>
 
-<p>
-  <strong>Tel2:</strong>
-  <%= @cliente.tel2 %>
-</p>
-
-<%= link_to 'Edit', edit_cliente_path(@cliente) %> |
-<%= link_to 'Back', clientes_path %>
+  <p>
+    <strong>Tel2:</strong>
+    <%= @cliente.tel2 %>
+  </p>
+</div>

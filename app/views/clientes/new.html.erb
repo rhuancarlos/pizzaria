@@ -1,3 +1,20 @@
-<h1>Novo Cliente</h1>
-<%= render 'form' %>
+<div class="col-md-2 temp-nav">
+    <%= render 'menu' %>
+</div>
+<div class="col-md-10 temp-conteudo">
+  <div class="row">
+    <% if @cliente.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
 
+        <ul>
+          <% @cliente.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+  <h1>Novo Cliente</h1>
+  <%= render 'form' %>
+</div>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pizzaria</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-2 temp-titulo">
+			<h3>Pizzaria</h3>
+		</div>
+		<div class="col-md-8 temp-menu">
+			<%= link_to 'Usuários', usuarios_path %>
+			<%= link_to 'Clientes', clientes_path %>
+			<%= link_to 'Pizzas', pizzas_path %>
+		</div>
+		<div class="col-md-2 temp-menu">
+			<p>Usuário logado Zezim</p>
+		</div>
+	</div>
+	<div class="row">
+		<%= yield %>
+	</div>
+	<div class="row temp-titulo">
+		
+	</div>
+</div>
+
+</body>
+</html>

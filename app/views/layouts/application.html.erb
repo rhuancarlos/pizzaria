@@ -8,10 +8,8 @@
 </head>
 <body>
 
-<div class="container">
-	<%= link_to 'Usuários', usuarios_path %>
-	<%= link_to 'Clientes', clientes_path %>
-	<%= link_to 'Pizzas', pizzas_path %>
+<div class="container-fluid">
+	<%= render 'layouts/menuadm' %>
 	<%= yield %>
 </div>
 
