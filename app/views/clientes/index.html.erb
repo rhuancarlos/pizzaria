@@ -1,7 +1,7 @@
 <div class="col-md-2 temp-nav">
     <%= render 'menu' %>
 </div>
-<div class="col-md-10 temp-conteudo">
+<div class="col-md-10">
     <div class="row">
     <div class="col-md-9">
     <% if notice%>
@@ -9,7 +9,7 @@
     <% end %>
     
       
-      <h1>Lista de Clientes</h1>
+      <h3>Lista de Clientes</h3>
     </div>
     <div class="col-md-3 temp-campo-pesquisa">
       <%= form_tag clientes_path, method: :get, class: "form-horizontal" do %>

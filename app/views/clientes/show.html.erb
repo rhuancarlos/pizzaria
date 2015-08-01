@@ -1,7 +1,7 @@
 <div class="col-md-2 temp-nav">
     <%= render 'menu' %>
 </div>
-<div class="col-md-10 temp-conteudo">
+<div class="col-md-10">
   <div class="row">
     <% if @cliente.errors.any? %>
       <div id="error_explanation">
@@ -18,7 +18,7 @@
   <% if notice%>
     <div class="alert alert-success" role="alert"><p id="notice"><%= notice %></p></div>
   <% end %>
-  <h1>Cliente [ <%= @cliente.nome %> ] Salvo com Sucesso</h1>
+  <h3>Cliente [ <%= @cliente.nome %> ] Salvo com Sucesso</h3>
   <p>
     <strong>Nome:</strong>
     <%= @cliente.nome %>

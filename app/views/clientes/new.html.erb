@@ -1,7 +1,7 @@
 <div class="col-md-2 temp-nav">
     <%= render 'menu' %>
 </div>
-<div class="col-md-10 temp-conteudo">
+<div class="col-md-10">
   <div class="row">
     <% if @cliente.errors.any? %>
       <div id="error_explanation">
@@ -15,6 +15,6 @@
       </div>
     <% end %>
   </div>
-  <h1>Novo Cliente</h1>
+  <h3>Novo Cliente</h3>
   <%= render 'form' %>
 </div>
