@@ -3,27 +3,25 @@
 </div>
 <div class="col-md-10">
     <div class="row">
-    <div class="col-md-9">
-    <% if notice%>
-      <div class="alert alert-success" role="alert"><p id="notice"><%= notice %></p></div>
-    <% end %>
-    
-      
-      <h3>Lista de Clientes</h3>
-    </div>
-    <div class="col-md-3 temp-campo-pesquisa">
-      <%= form_tag clientes_path, method: :get, class: "form-horizontal" do %>
-              <%= text_field_tag :q, @query_pesquisada, class: "span3 " %> 
-              <%= button_tag :submit do %>
-                <span class='glyphicon glyphicon-search' aria-hidden='true'></span>
-              <% end %>
+        <% if notice%>
+          <div class="alert alert-success" role="alert"><p id="notice"><%= notice %></p></div>
         <% end %>
     </div>
+    <div class="row">
+      <div class="col-md-4">
+          <h3>Lista de Clientes</h3>
+      </div>
+      <div class="col-md-8 temp">
+        <%= form_tag clientes_path, method: :get, class: "form-horizontal text-right tmpt-form-pesq" do %>
+                <%= text_field_tag :q, @query_pesquisada, class: "span3 " %> 
+                <%= button_tag :submit do %>
+                  <span class='glyphicon glyphicon-search' aria-hidden='true'></span>
+                <% end %>
+        <% end %>
+      </div>
     </div>
     <div class="row">
-        
-
-        <table class="table">
+        <table class="table table-hover">
           <thead>
             <tr>
               <th>Nome</th>
@@ -33,7 +31,6 @@
               <th></th>
             </tr>
           </thead>
-
           <tbody>
             <% @clientes.each do |cliente| %>
               <tr>
@@ -51,6 +48,4 @@
           </tbody>
         </table>
     </div>
-
-      
 </div>

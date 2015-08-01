@@ -1,6 +1,4 @@
 class ClientesController < ApplicationController
-  # Layout a ser carregado 
-  layout "administrator"
 
   before_action :set_cliente, only: [:show, :edit, :update, :destroy]
 

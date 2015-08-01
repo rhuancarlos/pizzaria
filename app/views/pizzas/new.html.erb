@@ -1,5 +1,20 @@
-<h1>New Pizza</h1>
+<div class="col-md-2 temp-nav">
+    <%= render 'menu' %>
+</div>
+<div class="col-md-10">
+  <div class="row">
+    <% if @pizza.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@pizza.errors.count, "error") %> prohibited this pizza from being saved:</h2>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', pizzas_path %>
+        <ul>
+          <% @pizza.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+  <h3>Nova Pizza</h3>
+  <%= render 'form' %>
+</div>

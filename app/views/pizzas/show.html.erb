@@ -1,34 +1,49 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-2 temp-nav">
+    <%= render 'menu' %>
+</div>
+<div class="col-md-10">
+  <div class="row">
+    <% if @pizza.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@pizza.errors.count, "error") %> prohibited this pizza from being saved:</h2>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @pizza.nome %>
-</p>
+        <ul>
+          <% @pizza.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+  <% if notice%>
+    <div class="alert alert-success" role="alert"><p id="notice"><%= notice %></p></div>
+  <% end %>
+  <h3>Pizza [ <%= @pizza.nome %> ]</h3>
+  <p>
+    <strong>Nome:</strong>
+    <%= @pizza.nome %>
+  </p>
 
-<p>
-  <strong>Foto:</strong>
-  <%= @pizza.foto %>
-</p>
+  <p>
+    <strong>Foto:</strong>
+    <%= @pizza.foto %>
+  </p>
 
-<p>
-  <strong>Ingredientes:</strong>
-  <%= @pizza.ingredientes %>
-</p>
+  <p>
+    <strong>Ingredientes:</strong>
+    <%= @pizza.ingredientes %>
+  </p>
 
-<p>
-  <strong>Precop:</strong>
-  <%= @pizza.precop %>
-</p>
-
-<p>
-  <strong>Precom:</strong>
-  <%= @pizza.precom %>
-</p>
-
-<p>
-  <strong>Precog:</strong>
-  <%= @pizza.precog %>
-</p>
-
-<%= link_to 'Edit', edit_pizza_path(@pizza) %> |
-<%= link_to 'Back', pizzas_path %>
+  <p>
+    <strong>Preço P:</strong>
+    <%= @pizza.precop %>
+  </p>
+  <p>
+    <strong>Preço M:</strong>
+    <%= @pizza.precom %>
+  </p>
+  <p>
+    <strong>Preço G:</strong>
+    <%= @pizza.precog %>
+  </p>
+</div>
