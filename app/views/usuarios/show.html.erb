@@ -1,24 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-2 temp-nav">
+    <%= render 'menu' %>
+</div>
+<div class="col-md-10">
+  <div class="row">
+    <% if @usuario.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@usuario.errors.count, "error") %> prohibited this usuario from being saved:</h2>
 
-<p>
-  <strong>Email:</strong>
-  <%= @usuario.email %>
-</p>
+        <ul>
+          <% @usuario.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+  <% if notice%>
+    <div class="alert alert-success" role="alert"><p id="notice"><%= notice %></p></div>
+  <% end %>
+  <h3>usuario [ <%= @usuario.apelido %> ]</h3>
+  <p>
+    <strong>Apelido:</strong>
+    <%= @usuario.apelido %>
+  </p>
 
-<p>
-  <strong>Senha:</strong>
-  <%= @usuario.senha %>
-</p>
+  <p>
+    <strong>email:</strong>
+    <%= @usuario.email %>
+  </p>
 
-<p>
-  <strong>Apelido:</strong>
-  <%= @usuario.apelido %>
-</p>
-
-<p>
-  <strong>Tipo:</strong>
-  <%= @usuario.tipo %>
-</p>
-
-<%= link_to 'Edit', edit_usuario_path(@usuario) %> |
-<%= link_to 'Back', usuarios_path %>
+  <p>
+    <strong>tipo:</strong>
+    <%= @usuario.tipo %>
+  </p>
+</div>
